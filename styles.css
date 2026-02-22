@@ -1,0 +1,176 @@
+/* -------------------------
+   Brand palette (from logo)
+--------------------------*/
+:root{
+  --navy:#072F3D;
+  --teal:#0EA5A3;
+  --sand:#F2EDE5;
+  --sun:#F59E0B;
+  --magenta:#7A165A;
+  --orange:#F97316;
+
+  --ink:#0f172a;         /* slate-900-ish body text */
+  --muted:#475569;       /* slate-600-ish */
+  --card:#ffffff;
+  --border:#e5e7eb;
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Inter, sans-serif;
+  color:var(--ink);
+  background: var(--sand);
+  line-height:1.6;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header / Hero */
+.site-header{
+  color:#fff;
+  background:
+    radial-gradient(1100px 500px at 70% -10%, var(--magenta), transparent 60%),
+    linear-gradient(135deg, var(--magenta), var(--orange));
+  padding:28px 0 40px;
+  position:relative;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{display:flex;align-items:center;gap:16px}
+.logo {
+  width: 104px;
+  height:auto; /* let it keep proportions */
+  object-fit:contain;
+}
+.site-title{
+  font: 800 40px/1.05 Montserrat, sans-serif;
+  letter-spacing:-.02em;margin:0
+}
+.header-cta{white-space:nowrap}
+
+.hero-copy{margin-top:18px}
+
+/* Key info cards */
+.key-info{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:22px;
+}
+/* .info-card{
+  background:rgba(255,255,255,.75);
+  color:var(--ink);
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:18px;
+  padding:18px 16px;
+}
+.info-label{
+  font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:#64748b;
+}
+.info-value {
+  font-weight: 800;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.2;
+  margin-top: 2px;
+  white-space: nowrap;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+} */
+
+.info-block{
+  padding:0 16px;
+}
+.info-icon{
+    text-align: center;
+  color:var(--sand);
+  margin-bottom: 12px;
+  align-self: center;
+}
+.icon{
+  width:36px;height:36px;
+  stroke: currentColor; fill: none; stroke-width:1.6;
+  vertical-align:-3px; /* tweak baseline */
+}
+
+
+.info-info {
+    text-align: center;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+  line-height: 1.2;
+  margin-top: 2px;
+  white-space: nowrap;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+}
+
+/* Sections */
+.section{padding:56px 0;background:#fff}
+.section.alt{background:rgb(236, 239, 242)}
+.section-title{
+  font:800 28px/1.15 Montserrat, sans-serif;
+  margin:0 0 14px;
+  color:var(--navy);
+}
+h4 {
+  margin: 32px 0 0;
+  font: 600 0.95rem/1.2 Inter, sans-serif;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background:var(--navy);
+  color:#fff; text-decoration:none;
+  font-weight:700;
+  padding:12px 32px;
+  border-radius:140px;
+  box-shadow:0 10px 24px rgba(7,47,61,.25);
+  transition:transform .08s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.btn:hover{opacity: 0.8;}
+.btn:active{opacity: 0.9;}
+.btn-light{
+  background:#fff; color:var(--ink);
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+}
+
+/* Footer */
+.site-footer{
+  background:var(--navy);
+  color:#cbd5e1;
+  padding:28px 0;
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap
+}
+.footer-nav a{
+  color:#e2e8f0;text-decoration:none;margin-left:16px;font-weight:600
+}
+.footer-nav a:hover{text-decoration:underline}
+
+/* Responsive */
+@media (max-width: 900px){
+  .key-info{grid-template-columns:1fr}
+  .site-title{font-size:32px}
+  .logo{width:76px;height:76px}
+}
+/* Center the "Register Now" button in the Overview section */
+#overview .btn, #register .btn {
+  display: block;
+  width: max-content; /* shrink to text width */
+  margin: 40px auto 0; /* center horizontally */
+  text-align: center;  /* center the label */
+}
+
+@media (max-width: 700px) {
+  .header-cta {
+    display: none;
+  }
+}
